@@ -1,0 +1,36 @@
+.todo-wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.todo {
+    padding: 1em;
+    margin: 0.2em 0;
+    border-radius: 5px;
+    border: 2px solid #000;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+button {
+    border: none;
+	padding: 10px 20px;
+	display: inline-block;
+	outline: none;
+	position: relative;
+    color: #fff;
+	background: #226fbe;
+}
+
+button.red {
+    background-color: red;
+}
