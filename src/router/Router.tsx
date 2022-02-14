@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import TodoDetail from '../components/TodoDetail'
-import Todos from '../routes/Todos'
+import TodoDetail from '../pages/TodoDetail'
+import Todos from '../pages/Todos'
 
 const PageRoutes = () => {
     return (

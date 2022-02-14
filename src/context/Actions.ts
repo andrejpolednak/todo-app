@@ -3,7 +3,7 @@ import { Todo } from '../types/todo'
 export const initialState = {
     loading: false,
     data: [] as Todo[],
-    detail: {} as Todo
+    detail: {title:''} as Todo
 }
 
 export type ITodoState = typeof initialState

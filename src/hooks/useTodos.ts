@@ -4,22 +4,15 @@ import { todoReducer, initialState, todoActions } from '../context/Actions'
 
 import { useTodoContext } from '../context/State'
 
-const dispatchEnhancer =
-    (dispatch: any) =>
-    (...args: any[]) => {
-        dispatch(...args)
-    }
 
 export const useTodos = () => {
-    const [rawState, dispatchRaw] = useReducer(todoReducer, initialState)
-
-    const dispatch = dispatchEnhancer(dispatchRaw)
+    const [rawState, dispatch] = useReducer(todoReducer, initialState)
 
     const state = useMemo(
         () => ({
             todoList: rawState.data.filter((i) => !i.deleted),
             detail: rawState.detail,
-            loading: rawState.loading,
+            loading: rawState.loading
         }),
         [rawState]
     )
@@ -82,6 +75,7 @@ export const useTodos = () => {
             }
             try {
                 dispatch(todoActions.editTodo(detail.id, detail))
+                console.log('Updated')
                 // const response = {}; /// API
             } catch (err) {
                 dispatch(todoActions.editTodo(detail.id, originalValue))
